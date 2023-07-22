@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 
 import { CartContextProvider } from "./contexts/CartContext";
 
+
 // styles
 import { Wrapper } from "./GlobalStyles/Wrapper";
 

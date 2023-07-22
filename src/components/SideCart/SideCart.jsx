@@ -5,39 +5,18 @@ import { cartContext } from "../../contexts/CartContext";
 import { IoClose } from "react-icons/io5";
 
 const SideCart = ({ show }) => {
-  const { showCart, handleShowCart } = useContext(cartContext);
+  const { showCart, handleShowCart, removeProductCart, productsCart } =
+    useContext(cartContext);
 
-  const [products, setProducts] = useState([]);
   const [total, setTotal] = useState(0);
-  const [totalItens, setTotalItens] = useState(0);
 
   useEffect(() => {
-    const productsCart = localStorage.getItem("cart")
-      ? JSON.parse(localStorage.getItem("cart"))
-      : [];
-
     const total = productsCart.reduce((prev, current) => {
-      console.log(current.price);
-      console.log(prev);
       return current.price + prev;
     }, 0);
 
-    console.log(total);
-
     setTotal(total);
-
-    setProducts(productsCart);
-  }, []);
-
-  const handleRemoveToCart = (id) => {
-    const productsFiltred = products.filter((prod) => prod.id != id);
-
-    setProducts(productsFiltred);
-
-    localStorage.setItem("cart", JSON.stringify(productsFiltred));
-
-    return;
-  };
+  }, [productsCart]);
 
   return (
     <C.Container show={showCart}>
@@ -48,16 +27,16 @@ const SideCart = ({ show }) => {
           <IoClose onClick={() => handleShowCart()} />
         </C.ContainerCartHeader>
         <C.ContainerCartBody>
-          {products.length > 0 ? (
+          {productsCart.length > 0 ? (
             <>
-              {products.map((prod) => (
+              {productsCart.map((prod) => (
                 <C.ContainerCartProduct key={prod.id}>
                   <C.ContainerImgProduct image={prod.image} />
 
                   <div className="centerProduct">
                     <div className="containerTitle">
                       <p>{prod.title}</p>
-                      <IoClose onClick={() => handleRemoveToCart(prod.id)} />
+                      <IoClose onClick={() => removeProductCart(prod.id)} />
                     </div>
                     <div className="containerPrice">
                       <div className="containerCounter">
@@ -65,7 +44,10 @@ const SideCart = ({ show }) => {
                         <p>2</p>
                         <button>+</button>
                       </div>
-                      <h3><span>R$ </span>{prod.price}</h3>
+                      <h3>
+                        <span>R$ </span>
+                        {prod.price}
+                      </h3>
                     </div>
                   </div>
                 </C.ContainerCartProduct>

@@ -80,15 +80,26 @@ export const BestProducts = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  gap: 10px;
+  
+  
 
   h2 {
     width: 100%;
     margin-bottom: 20px;
   }
 
-  @media screen and (max-width: 768px) {
-    justify-content: center;
+  
+
+  @media screen and (max-width: 1200px) {
+   padding: 0 10px;
   }
+  @media screen and (max-width: 480px) {
+   justify-content: center;
+   padding: 0;
+  }
+  
+
 `;
 
 export const CardProduct = styled.div`

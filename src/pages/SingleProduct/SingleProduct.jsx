@@ -1,7 +1,9 @@
 import * as C from "./SingleProductStyles";
 
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+//contexts
+import { cartContext } from "../../contexts/CartContext";
 
 // Utils
 import { getData } from "../../utils/getData";
@@ -19,6 +21,9 @@ const SingleProduct = () => {
   const [products, setProducts] = useState(1);
   const [loading, setLoading] = useState(true);
   const [count, setCount] = useState(1);
+
+  // contexts 
+  const {addProductCart} = useContext(cartContext);
 
   const handleCount = (e) => {
     if (e.target.innerText == "-") {
@@ -62,31 +67,6 @@ const SingleProduct = () => {
     getProducts();
   }, [id]);
 
-  const handleSaveToCart = (prod) => {
-    const cart = localStorage.getItem("cart")
-      ? JSON.parse(localStorage.getItem("cart"))
-      : [];
-
-    const checkIfProdIsSaved =  cart.find(item => item.id == prod.id);
-
-    if (checkIfProdIsSaved) {
-      console.log("Este produto já está salvo!");
-      return;
-    }
-
-    const prodSave = {
-      id: prod.id,
-      image: prod.image,
-      price: prod.price,
-      title: prod.title,
-    };
-
-    cart.push(prodSave);
-
-    localStorage.setItem("cart", JSON.stringify(cart));
-
-    console.log("Produto salvo com sucesso!");
-  };
 
   if (loading) {
     return <Loading />;
@@ -115,7 +95,7 @@ const SingleProduct = () => {
               </C.ContainerQty>
               <C.ContainerAction>
                 <button>Buy</button>
-                <button onClick={() => handleSaveToCart(data)}>
+                <button onClick={() => addProductCart(data)}>
                   add to car
                 </button>
               </C.ContainerAction>

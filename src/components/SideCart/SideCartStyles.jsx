@@ -10,6 +10,7 @@ export const Container = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
   color: #fff;
   z-index: 20;
+  overflow: hidden;
 `;
 export const ContainerVoid = styled.div`
   width: calc(100% - 500px);
