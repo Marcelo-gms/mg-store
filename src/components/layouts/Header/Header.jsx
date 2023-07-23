@@ -15,7 +15,7 @@ import { IoClose } from "react-icons/io5";
 const Header = () => {
   const [show, setShow] = useState(false);
 
-  const { showCart, handleShowCart } = useContext(cartContext);
+  const { showCart, handleShowCart, productsCart } = useContext(cartContext);
 
   const handleShowMenu = () => {
     setShow(!show);
@@ -32,13 +32,20 @@ const Header = () => {
         <C.ContainerMenuGroup>
           <C.Navlist>
             <li>
-              <NavLink to="/store">Loja</NavLink>
+              <NavLink
+                to="/store"
+                className={({ isActive }) => (isActive ? "isActive" : "")}
+              >
+                Loja
+              </NavLink>
             </li>
           </C.Navlist>
 
-          <C.ShoppingCart>
-            <span>1</span>
-            <AiOutlineShoppingCart onClick={() => handleShowCart()} />
+          <C.ShoppingCart onClick={() => handleShowCart()}>
+            <span className={productsCart.length >= 1 ? "visible" : "hidde"}>
+              {productsCart.length}
+            </span>
+            <AiOutlineShoppingCart />
           </C.ShoppingCart>
 
           <GiHamburgerMenu
@@ -49,7 +56,9 @@ const Header = () => {
           <C.NavlistMobile show={show ? "show" : ""}>
             <IoClose onClick={handleShowMenu} />
             <li>
-              <NavLink to="category">Loja</NavLink>
+              <NavLink onClick={handleShowMenu} to="/store">
+                Loja
+              </NavLink>
             </li>
           </C.NavlistMobile>
         </C.ContainerMenuGroup>

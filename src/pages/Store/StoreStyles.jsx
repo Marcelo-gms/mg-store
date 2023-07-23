@@ -20,7 +20,8 @@ padding: 50px 0;
     align-items: center;
     gap: 1em;
 
-    button{
+    a{
+      width: 6em;
         min-width: 6em;
         border: 1px solid #ccc;
         background-color: transparent;
@@ -32,12 +33,14 @@ padding: 50px 0;
         align-items: center;
         font-size: 1.2em;
 
-        &.isActive{
+
+        
+    }
+    
+    .isActive{
           background-color: #fff;
           color: #000;
         }
-    }
-
 
   }
 `;
@@ -49,4 +52,11 @@ export const ContainerProducts = styled.div`
   justify-content: flex-start;
   flex-wrap: wrap;
   gap: 10px;
+  padding: 0 10px;
+
+  @media screen and (max-width:480px) {
+
+    justify-content: center;
+    
+  }
 `;

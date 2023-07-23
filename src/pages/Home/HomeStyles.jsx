@@ -167,7 +167,7 @@ export const ConatinerBanner = styled.div`
         margin: 20px 0;
       }
 
-      button {
+      a {
         padding: 10px 20px;
         background-color: transparent;
         border: 1px solid #ccc;

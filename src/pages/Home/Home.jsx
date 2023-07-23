@@ -2,6 +2,8 @@ import * as C from "./HomeStyles";
 
 import { useState, useEffect } from "react";
 
+import { Link } from "react-router-dom";
+
 // Components
 import Carousel from "../../components/Carousel/Carousel";
 import Loading from "../../components/Loading/Loading"
@@ -67,7 +69,7 @@ const Home = () => {
               Nossos produtos são feitos com materia prima vindo diretamente do
               nordeste do país.
             </p>
-            <button>Conhecer</button>
+            <Link to="/store/jewelery">Conhecer</Link>
           </div>
         </div>
         <div className="sideImg" />
@@ -86,7 +88,7 @@ const Home = () => {
               Feitas com o melhor pano para garantir conforto, todas as peças
               são 100% algodão.
             </p>
-            <button>Conhecer</button>
+            <Link to="/store/men">Conhecer</Link>
           </div>
         </div>
         <div className="sideImg" />

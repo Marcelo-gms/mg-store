@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 
 export const Container = styled.header`
   width: 100%;
-  
+
   min-height: 10vh;
   background-color: #ccc;
   display: flex;
@@ -43,7 +43,6 @@ export const Logo = styled.div`
 export const ContainerMenuGroup = styled.div`
   display: flex;
   gap: 30px;
-  
 
   .iconMobileOpen {
     font-size: 1.3em;
@@ -114,6 +113,7 @@ export const NavlistMobile = styled.ul`
 export const ShoppingCart = styled.div`
   font-size: 1.2em;
   position: relative;
+  cursor: pointer;
 
   span {
     width: 100%;
@@ -128,9 +128,19 @@ export const ShoppingCart = styled.div`
     color: #af89ffff;
   }
 
-  a {
-    svg {
-      font-size: 1.2em;
+  svg {
+    font-size: 1.2em;
+    transition: all.5s;
+
+    &:hover{
+      color: #af89ffff;
     }
+  }
+
+  .visible {
+    display: block;
+  }
+  .hidde {
+    display: none;
   }
 `;

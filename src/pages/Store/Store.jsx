@@ -1,18 +1,45 @@
 import * as C from "./StoreStyles";
 
-
 import { useEffect, useState } from "react";
+
+import { useParams, NavLink, Link } from "react-router-dom";
 
 import CardProduct from "../../components/CardProduct/CardProduct";
 import Loading from "../../components/Loading/Loading";
 function Category() {
-  const [category, setCategory] = useState("");
+  //const [category, setCategory] = useState("");
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(null);
+  const [title, setTitle] = useState("");
 
-  const getProducts = async () => {
+  const { category } = useParams();
+  const getProducts = async (e) => {
     setLoading(true);
-    const res = await fetch(`https://fakestoreapi.com/products${category}`);
+    setTitle("");
+    let url = "";
+
+    if (category == "men") {
+      setTitle("Masculino");
+
+      url = "/category/men's%20clothing";
+    }
+
+    if (category == "women") {
+      setTitle("Feminino");
+      url = "/category/women's%20clothing";
+    }
+
+    if (category == "jewelery") {
+      setTitle("Jóias");
+      url = "/category/jewelery";
+    }
+
+    if (category == "eletronics") {
+      setTitle("Eletronicos");
+      url = "/category/electronics";
+    }
+
+    const res = await fetch(`https://fakestoreapi.com/products${url}`);
     const resJson = await res.json();
     const data = await resJson;
 
@@ -35,21 +62,33 @@ function Category() {
         <h2 className="title">{!category && "Todos"}</h2>
 
         <div className="ContainerChangCategory">
-          <button onClick={() => setCategory("")} className="isActive">
+          <NavLink to="/store" className={!title ? "isActive" : ""}>
             Todos
-          </button>
-          <button onClick={() => setCategory("/category/men's%20clothing")}>
+          </NavLink>
+          <NavLink
+            to="/store/men"
+            className={({ isActive }) => (isActive ? "isActive" : "")}
+          >
             Masculino
-          </button>
-          <button onClick={() => setCategory("/category/women's%20clothing")}>
+          </NavLink>
+          <NavLink
+            to="/store/women"
+            className={({ isActive }) => (isActive ? "isActive" : "")}
+          >
             Feminino
-          </button>
-          <button onClick={() => setCategory("/category/jewelery")}>
+          </NavLink>
+          <NavLink
+            to="/store/jewelery"
+            className={({ isActive }) => (isActive ? "isActive" : "")}
+          >
             Jóias
-          </button>
-          <button onClick={() => setCategory("/category/electronics")}>
-            Tecnologia
-          </button>
+          </NavLink>
+          <NavLink
+            to="/store/eletronics"
+            className={({ isActive }) => (isActive ? "isActive" : "")}
+          >
+            Eletronicos
+          </NavLink>
         </div>
       </C.CategoryHeader>
 
