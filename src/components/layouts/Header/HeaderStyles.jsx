@@ -4,7 +4,7 @@ export const Container = styled.header`
   width: 100%;
 
   min-height: 10vh;
-  background-color: #ccc;
+  background-color: var(--white);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,7 +12,7 @@ export const Container = styled.header`
   top: 0;
   z-index: 11;
 
-  color: #000;
+  color: var(--black)
 `;
 
 export const Navbar = styled.nav`
@@ -81,7 +81,7 @@ export const NavlistMobile = styled.ul`
   width: 100%;
   max-width: 600px;
   height: 100vh;
-  background-color: #fff;
+  background-color: var(--white);
   z-index: 10;
   overflow: hidden;
   opacity: 0;
@@ -124,8 +124,8 @@ export const ShoppingCart = styled.div`
     font-size: 0.7em;
     border-radius: 50%;
     padding: 3px;
-    background-color: #fff;
-    color: #af89ffff;
+    background-color: var(--light-grey);
+    color: var(--black);
   }
 
   svg {
@@ -133,7 +133,7 @@ export const ShoppingCart = styled.div`
     transition: all.5s;
 
     &:hover{
-      color: #af89ffff;
+      color: var(--purple);
     }
   }
 

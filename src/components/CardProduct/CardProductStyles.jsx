@@ -11,6 +11,7 @@ export const CardProduct = styled.div`
   //background-color: rgba(42, 32, 52, 0);
   padding: 10px;
   position: relative;
+  box-shadow: 0 0 10px var(--alpha);
 
   a {
     width: 100%;

@@ -2,6 +2,8 @@ import * as C from "./SingleProductStyles";
 
 import { useParams } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
+
+import { ToastContainer, toast } from "react-toastify";
 //contexts
 import { cartContext } from "../../contexts/CartContext";
 

@@ -2,6 +2,7 @@ import { styled } from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
+  //background-color: var(--white);
 `;
 
 export const CategoryHeader = styled.div`
@@ -25,7 +26,7 @@ padding: 50px 0;
         min-width: 6em;
         border: 1px solid #ccc;
         background-color: transparent;
-        color: #fff;
+        color: var(--black);
         padding: 0.5em 1em;
         cursor: pointer;
         display: flex;
@@ -38,8 +39,8 @@ padding: 50px 0;
     }
     
     .isActive{
-          background-color: #fff;
-          color: #000;
+          background-color: var(--black);
+          color:var(--white);
         }
 
   }

@@ -1,6 +1,7 @@
 import { createContext, useState, useEffect } from "react";
 
 export const cartContext = createContext();
+import { ToastContainer, toast } from "react-toastify";
 
 export const CartContextProvider = ({ children }) => {
   const [showCart, setShowCart] = useState(false);
@@ -24,7 +25,7 @@ export const CartContextProvider = ({ children }) => {
     const checkIfProdIsSaved = productsCart.find((item) => item.id == prod.id);
 
     if (checkIfProdIsSaved) {
-      console.log("Este produto já está salvo!");
+      toast.warn("Esse produto já está no carrinho!")
       return;
     }
 
@@ -41,7 +42,7 @@ export const CartContextProvider = ({ children }) => {
       return updateCart;
     });
 
-    console.log("Produto salvo com sucesso!");
+    toast.success("Produto salvo com sucesso!")
   };
 
   const removeProductCart = (id) => {

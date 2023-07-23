@@ -2,7 +2,10 @@ import { styled } from "styled-components";
 
 export const CarouselContainer = styled.div`
   width: 100%;
-  margin: 50px 0;
+  padding: 50px 0;
+  margin: 20px 0;
+  background-color: var(--white);
+  
 
   h2 {
     margin-bottom: 20px;
@@ -13,6 +16,7 @@ export const CarouselContainer = styled.div`
     display: flex;
     overflow: hidden;
     cursor: grab;
+    padding: 0 10px;
 
     .carouselItem {
       width: 100%;
@@ -34,6 +38,7 @@ export const CardProduct = styled.div`
   background-color: #fff;
   padding: 10px;
   position: relative;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
 
   &:hover {
     outline: 2px solid #c259ff;

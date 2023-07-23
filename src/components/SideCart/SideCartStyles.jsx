@@ -113,7 +113,7 @@ export const ContainerCartProduct = styled.div`
     p {
       font-weight: bold;
       max-width: 70%;
-      max-height: 50px;
+      max-height: 43px;
       overflow: hidden;
     }
     svg {
@@ -135,6 +135,10 @@ export const ContainerCartProduct = styled.div`
         width: 2em;
         height: 1.5em;
         font-size: 1.2em;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--black);
       }
     }
   }

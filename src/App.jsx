@@ -2,6 +2,8 @@ import { Outlet } from "react-router-dom";
 
 import { CartContextProvider } from "./contexts/CartContext";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // styles
 import { Wrapper } from "./GlobalStyles/Wrapper";
@@ -19,6 +21,7 @@ function App() {
         <Header />
 
         <Wrapper>
+          <ToastContainer />
           <Outlet />
         </Wrapper>
 

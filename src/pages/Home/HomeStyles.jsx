@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 export const Container = styled.div`
   width: 100%;
-  overflow: hidden;
+  //overflow: hidden;
 `;
 
 export const ContainerGridBanner = styled.section`
@@ -10,6 +10,10 @@ export const ContainerGridBanner = styled.section`
   display: grid;
   gap: 10px;
   margin-top: 20px;
+  padding:20px;
+  background-color: var(--white);
+  
+  
   grid-template-columns: 3fr 2fr 1fr;
   grid-template-rows: 1fr 1fr;
   grid-template-areas:
@@ -18,6 +22,7 @@ export const ContainerGridBanner = styled.section`
 
   div {
     width: 100%;
+    
     min-height: 200px;
     background-color: #fff;
     background-repeat: no-repeat;
@@ -25,6 +30,9 @@ export const ContainerGridBanner = styled.section`
     background-attachment: scroll;
     background-size: contain;
     position: relative;
+    //box-shadow: 0 0 10px var(--alpha);
+    border: 1px solid #ccc;
+    
 
     h2 {
       width: 100%;
@@ -81,6 +89,8 @@ export const BestProducts = styled.div`
   justify-content: space-between;
   align-items: center;
   gap: 10px;
+  background-color: var(--white);
+  padding: 20px;
   
   
 
@@ -111,6 +121,7 @@ export const CardProduct = styled.div`
   background-color: #fff;
   padding: 10px;
   position: relative;
+  
 
   &:hover {
     outline: 2px solid #c259ff;
@@ -147,12 +158,13 @@ export const boxDescription = styled.div`
 export const ConatinerBanner = styled.div`
   width: 100%;
   display: flex;
+  box-shadow: 0 0 10px var(--alpha);
 
   flex-direction: ${({reverse}) => reverse ? "row-reverse" : ""};
 
   .sideText {
     flex: 1;
-    border: 1px solid #ccc;
+    //border: 1px solid #ccc;
     min-height: 500px;
     display: flex;
     flex-direction: column;
@@ -165,18 +177,19 @@ export const ConatinerBanner = styled.div`
 
       p {
         margin: 20px 0;
+        color: var(--light-black);
       }
 
       a {
         padding: 10px 20px;
         background-color: transparent;
-        border: 1px solid #ccc;
-        color: #fff;
-        transition: 0.5s;
+        border: 1px solid var(--light-black);
+        color: var(--blak);
+        transition: 0.6s;
 
         &:hover {
-          background-color: #fff;
-          color: #000;
+          background-color: var(--black);
+          color: var(--white);
         }
       }
     }

@@ -67,11 +67,14 @@ export const ContainerQty = styled.div`
       min-width: 3em;
       font-size: 1.4em;
       height: 1.2em;
-      background-color: #fff;
-      border: 1px solid #ffffff;
+      background-color: var(--grey);
+      border: 1px solid var(--grey);
       color: #0c0c0c;
       cursor: pointer;
       font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 
@@ -97,7 +100,7 @@ export const ContainerAction = styled.div`
     font-weight: bold;
     background-color: transparent;
     border: 1px solid #ccc;
-    color: #fff;
+    color: var(--black);
     padding: 10px;
     text-align: center;
     display: flex;

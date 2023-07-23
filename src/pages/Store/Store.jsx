@@ -35,7 +35,7 @@ function Category() {
     }
 
     if (category == "eletronics") {
-      setTitle("Eletronicos");
+      setTitle("Eletrônicos");
       url = "/category/electronics";
     }
 
@@ -59,7 +59,7 @@ function Category() {
   return (
     <C.Container>
       <C.CategoryHeader>
-        <h2 className="title">{!category && "Todos"}</h2>
+        <h2 className="title">{title ? title : "Todos"}</h2>
 
         <div className="ContainerChangCategory">
           <NavLink to="/store" className={!title ? "isActive" : ""}>
@@ -87,7 +87,7 @@ function Category() {
             to="/store/eletronics"
             className={({ isActive }) => (isActive ? "isActive" : "")}
           >
-            Eletronicos
+            Eletrônicos
           </NavLink>
         </div>
       </C.CategoryHeader>

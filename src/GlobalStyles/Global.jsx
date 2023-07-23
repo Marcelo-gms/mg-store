@@ -1,6 +1,16 @@
 import { createGlobalStyle } from "styled-components";
 
 export const Global = createGlobalStyle`
+
+:root{
+    --white:#fff;
+    --grey:#ccc;
+    --light-grey:#f9f9f9;
+    --light-black:rgb(118, 118, 118);
+    --black:#000;
+    --purple:#a435f0;
+    --alpha:rgba(0,0,0,0.3);
+}
     
     *{
         margin: 0;
@@ -9,21 +19,21 @@ export const Global = createGlobalStyle`
     }
 
     body{
-        background-color: #282433ff;
-        color: #f7f7f7;
+        background-color: var(--light-grey);
+        color: var(--black);
         font-family: Arial, Helvetica, sans-serif;
         position: relative;
 
         &::-webkit-scrollbar {
-    width: 12px;
+    width: 10px;
   }
   &::-webkit-scrollbar-track {
-    background-color: #282433ff;
+    background-color: var(--grey);
   }
   &::-webkit-scrollbar-thumb {
     
     border-radius: 10px;
-    background-color: #6e6d6d;
+    background-color: var(--light-black);
   }
 
         
