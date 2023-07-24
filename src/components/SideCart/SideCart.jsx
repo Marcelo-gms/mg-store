@@ -5,6 +5,8 @@ import { cartContext } from "../../contexts/CartContext";
 import { IoClose } from "react-icons/io5";
 import { BiTrash } from "react-icons/bi";
 
+import { toast } from "react-toastify";
+
 const SideCart = ({ show }) => {
   const { showCart, handleShowCart, removeProductCart, productsCart } =
     useContext(cartContext);
@@ -18,6 +20,10 @@ const SideCart = ({ show }) => {
 
     setTotal(total);
   }, [productsCart]);
+
+  const handleQty = () => {
+    return toast.warn("Esse recurso está em desenvolvimento, desculpe.");
+  };
 
   return (
     <C.Container show={showCart ? showCart : undefined}>
@@ -41,9 +47,9 @@ const SideCart = ({ show }) => {
                     </div>
                     <div className="containerPrice">
                       <div className="containerCounter">
-                        <button>-</button>
-                        <p>2</p>
-                        <button>+</button>
+                        <button onClick={() => handleQty()}>-</button>
+                        <p>1</p>
+                        <button onClick={() => handleQty()}>+</button>
                       </div>
                       <h3>
                         <span>R$ </span>

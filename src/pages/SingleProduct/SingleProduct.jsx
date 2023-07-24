@@ -3,7 +3,6 @@ import * as C from "./SingleProductStyles";
 import { useParams } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
 
-import { ToastContainer, toast } from "react-toastify";
 //contexts
 import { cartContext } from "../../contexts/CartContext";
 
@@ -93,12 +92,12 @@ const SingleProduct = () => {
                     <p>{count}</p>
                     <button onClick={(e) => handleCount(e)}>+</button>
                   </div>
-                  <p>$ {data.price * count}</p>
+                  <p>R$ {data.price * count}</p>
                 </C.ContainerQty>
                 <C.ContainerAction>
-                  <button>Buy</button>
+                  <button>Comprar</button>
                   <button onClick={() => addProductCart(data)}>
-                    add to car
+                    Adicionar ao carrinho
                   </button>
                 </C.ContainerAction>
               </C.SideText>

@@ -42,7 +42,7 @@ export const CartContextProvider = ({ children }) => {
       return updateCart;
     });
 
-    toast.success("Produto salvo com sucesso!")
+    toast.success("Produto adicinado com sucesso!")
   };
 
   const removeProductCart = (id) => {
