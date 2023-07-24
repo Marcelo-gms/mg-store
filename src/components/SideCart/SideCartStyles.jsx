@@ -50,6 +50,7 @@ export const ContainerCartHeader = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 1em;
+  border-bottom: 1px solid var(--grey);
 
   p,
   svg {
@@ -118,7 +119,11 @@ export const ContainerCartProduct = styled.div`
     }
     svg {
       cursor: pointer;
-      font-size: 1.2em;
+      font-size: 1.5em;
+
+      &:hover{
+        color: var(--purple);
+      }
     }
   }
 

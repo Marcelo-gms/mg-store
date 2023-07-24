@@ -39,7 +39,7 @@ export const CardProduct = styled.div`
     min-width: none;
   }
   @media screen and (max-width: 480px) {
-    min-width: 90%;
+    min-width: 100%;
   }
 `;
 

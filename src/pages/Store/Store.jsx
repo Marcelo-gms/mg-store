@@ -58,6 +58,7 @@ function Category() {
 
   return (
     <C.Container>
+      <div className="containerLimiteWidth">
       <C.CategoryHeader>
         <h2 className="title">{title ? title : "Todos"}</h2>
 
@@ -98,6 +99,7 @@ function Category() {
             <CardProduct product={product} key={product.id} />
           ))}
       </C.ContainerProducts>
+      </div>
     </C.Container>
   );
 }

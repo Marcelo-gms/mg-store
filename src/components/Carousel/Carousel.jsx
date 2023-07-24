@@ -1,10 +1,10 @@
 import * as C from "./CarouselStyles";
 
 import { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import { motion } from "framer-motion";
 
-import CardProduct from "../CardProduct/CardProduct";
 
 const Carousel = ({ products }) => {
   const refCarousel = useRef();
@@ -33,12 +33,14 @@ const Carousel = ({ products }) => {
           {products &&
             products?.map((prod) => (
               <C.CardProduct key={prod.id}>
-                <C.CardImage imageurl={prod.image} />
+                
+                <C.CardImage imageurl={prod && prod.image} />
 
-                <C.boxDescription>
+                <C.BoxDescription>
                   <p>{prod.title}</p>
-                  <p>R$ {prod.price}</p>
-                </C.boxDescription>
+                  <span>R$ {prod.price}</span>
+                  <Link to={`/product/${prod.id}`}>Ver mais</Link>
+                </C.BoxDescription>
               </C.CardProduct>
             ))}
         </motion.div>

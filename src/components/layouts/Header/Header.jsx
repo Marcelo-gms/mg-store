@@ -25,7 +25,7 @@ const Header = () => {
       <C.Navbar>
         <C.Logo>
           <Link to="/">
-            <img src="/logo-1.png" alt="shop logo" />
+            <img src="/logo02.png" alt="shop logo" />
           </Link>
         </C.Logo>
 
@@ -53,7 +53,7 @@ const Header = () => {
             onClick={handleShowMenu}
           />
 
-          <C.NavlistMobile show={show ? "show" : ""}>
+          <C.NavlistMobile show={show ? "show" : undefined}>
             <IoClose onClick={handleShowMenu} />
             <li>
               <NavLink onClick={handleShowMenu} to="/store">

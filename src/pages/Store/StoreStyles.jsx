@@ -3,6 +3,13 @@ import { styled } from "styled-components";
 export const Container = styled.div`
   width: 100%;
   //background-color: var(--white);
+ 
+
+  .containerLimiteWidth{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 `;
 
 export const CategoryHeader = styled.div`
@@ -53,7 +60,7 @@ export const ContainerProducts = styled.div`
   justify-content: flex-start;
   flex-wrap: wrap;
   gap: 10px;
-  padding: 0 10px;
+  padding: 0 10px 50px;
 
   @media screen and (max-width:480px) {
 

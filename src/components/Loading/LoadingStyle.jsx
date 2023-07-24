@@ -6,8 +6,8 @@ export const Container = styled.div`
   overflow: hidden;
   display: flex;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 15;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 50;
   position: absolute;
   top: 0;
   right: 0;

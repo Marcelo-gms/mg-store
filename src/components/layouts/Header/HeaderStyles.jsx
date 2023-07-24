@@ -2,6 +2,7 @@ import { styled } from "styled-components";
 
 export const Container = styled.header`
   width: 100%;
+  box-shadow: inset  0 0 10px rgba(0,0,0,0.3);
 
   min-height: 10vh;
   background-color: var(--white);
@@ -126,6 +127,7 @@ export const ShoppingCart = styled.div`
     padding: 3px;
     background-color: var(--light-grey);
     color: var(--black);
+    border: 1px solid var(--light-black);
   }
 
   svg {

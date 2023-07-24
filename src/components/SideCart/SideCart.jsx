@@ -3,6 +3,7 @@ import { useState, useContext, useEffect } from "react";
 import { cartContext } from "../../contexts/CartContext";
 
 import { IoClose } from "react-icons/io5";
+import { BiTrash } from "react-icons/bi";
 
 const SideCart = ({ show }) => {
   const { showCart, handleShowCart, removeProductCart, productsCart } =
@@ -19,7 +20,7 @@ const SideCart = ({ show }) => {
   }, [productsCart]);
 
   return (
-    <C.Container show={showCart}>
+    <C.Container show={showCart ? showCart : undefined}>
       <C.ContainerVoid onClick={() => handleShowCart()} />
       <C.ContainerContent>
         <C.ContainerCartHeader>
@@ -31,12 +32,12 @@ const SideCart = ({ show }) => {
             <>
               {productsCart.map((prod) => (
                 <C.ContainerCartProduct key={prod.id}>
-                  <C.ContainerImgProduct image={prod.image} />
+                  <C.ContainerImgProduct image={prod && prod.image} />
 
                   <div className="centerProduct">
                     <div className="containerTitle">
                       <p>{prod.title}</p>
-                      <IoClose onClick={() => removeProductCart(prod.id)} />
+                      <BiTrash onClick={() => removeProductCart(prod.id)} />
                     </div>
                     <div className="containerPrice">
                       <div className="containerCounter">
